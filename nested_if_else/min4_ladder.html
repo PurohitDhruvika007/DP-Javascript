@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const a = parseInt(prompt("enter a="));
+      const b = parseInt(prompt("enter b="));
+      const c = parseInt(prompt("enter c="));
+      const d = parseInt(prompt("enter d="));
+      if (a < b && a < c && a < d) {
+        console.log("a is minimum");
+      } else if (b < a && b < c && b < d) {
+        console.log("b is minimum");
+      } else if (c < a && c < d && c < b) {
+        console.log("c is minimum");
+      } else {
+        console.log("d is minimum");
+      }
+    </script>
+  </body>
+</html>
