@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const a = parseInt(prompt("enter a="));
+      const b = parseInt(prompt("enter b="));
+      const c = parseInt(prompt("enter c="));
+      const d = parseInt(prompt("enter d="));
+      const e = parseInt(prompt("enter e="));
+      //a,b,c,d,e
+      if (a > b) {
+        //a,c,d,e
+        if (a > c) {
+          //a,d,e
+          if (a > d) {
+            //a,e
+            if (a > e) {
+              //a
+              console.log("a is maximum");
+            } else {
+              //e
+              console.log("e is maximum");
+            }
+          } else {
+            //d,e
+            if (d > e) {
+              //d
+              console.log("d is maximum");
+            } else {
+              //e
+              console.log("e is maximum");
+            }
+          }
+        } else {
+          //c,d,e
+          if (c > d) {
+            //c,e
+            if (c > e) {
+              //c
+              console.log("c is maximum");
+            } else {
+              //e
+              console.log("e is maximum");
+            }
+          } else {
+            // d,e
+            if (d > e) {
+              //d
+              console.log("d is maximum");
+            } else {
+              //e
+              console.log("e is maximum");
+            }
+          }
+        }
+      } else {
+        //b,c,d,e
+        if (b > c) {
+          //b,d,e
+          if (b > d) {
+            //b,e
+            if (b > e) {
+              //b
+              console.log("b is maximum");
+            } else {
+              // e
+              console.log("e is maximum");
+            }
+          } else {
+            //d,e
+            if (d > e) {
+              //d
+              console.log("d is maximum");
+            } else {
+              //e
+              console.log("e is maximum");
+            }
+          }
+        } else {
+          //c,d,e
+          if (c > d) {
+            //c,e
+            if (c > e) {
+              //c
+              console.log("c is maximum");
+            } else {
+              // e
+              console.log("e is maximum");
+            }
+          } else {
+            //d,e
+            if (d > e) {
+              //d
+              console.log("d is maximum");
+            } else {
+              //e
+              console.log("e is maximum");
+            }
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
