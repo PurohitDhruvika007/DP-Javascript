@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let num=parseInt(prompt("enter the number="));
+        function addition(num)
+        {
+            ld=0;
+            sum=0;
+            while(num>0)
+        {
+            ld=Math.floor(num%10);
+            sum+=ld;
+            num=Math.floor(num/10);
+        }
+        return sum;
+        }
+        function multiplication(num)
+        {
+            ld=0;
+            multi=1;
+            while(num>0)
+        {
+            ld=Math.floor(num%10);
+            multi*=ld;
+            num=Math.floor(num/10);
+        }
+        return multi;
+        }
+        let add=addition(num);
+        let mul=multiplication(num);
+        if(add==mul)
+        {
+            document.writeln("this is magic number");
+        }
+        else
+        {
+            document.writeln("this is not magic number");
+        }
+    </script>
+</body>
+</html>
