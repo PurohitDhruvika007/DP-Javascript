@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function length(num)
+        {
+            let len=0;
+            while(num>0)
+        {
+            num=Math.floor(num/10);
+            len++;
+        }
+        return len;
+        }
+        //armstong or not
+        num=parseInt(prompt("enter the number="));
+        function armstrong(num)
+        {
+            let arm=0;
+            let ld=0;
+            let real=num;
+            let n=length(num);
+
+            while(num>0)
+        {
+            ld=Math.floor(num%10);
+            m=1;
+            for(let i=1;i<=n;i++)
+        {
+            m*=ld;
+        }
+            arm+=m;
+            num=Math.floor(num/10);
+        }
+
+        if(arm==real)
+        {
+            document.writeln("number is armstrong");
+        }
+        else
+        {
+            document.writeln("number is not armstrong");
+        }
+        }
+        armstrong(num);
+    </script>
+</body>
+</html>

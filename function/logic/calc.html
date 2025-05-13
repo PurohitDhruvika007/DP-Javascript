@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //calc with switch case and function
+        let a=parseInt(prompt("enter a="));
+        let b=parseInt(prompt("enter b="));
+        let choice=prompt("enter the choice=");
+        function addition(a,b)
+        {
+            return a+b;
+        }
+        function substraction(a,b)
+        {
+            return a-b;
+        }
+        function multiplication(a,b)
+        {
+            return a*b;
+        }
+        function division(a,b)
+        {
+            return a/b;
+        }
+        function modul(a,b)
+        {
+            return a%b;
+        }
+        switch(choice)
+        {
+            case '+':document.writeln(addition(a,b));
+            break;
+            case '-':document.writeln(substraction(a,b));
+            break;
+            case '*':document.writeln(multiplication(a,b));
+            break;
+            case '/':document.writeln(division(a,b));
+            break;
+            case '%':document.writeln(modul(a,b));
+            break;
+            default:document.writeln("enter the valid input");
+        }
+    </script>
+</body>
+</html>
