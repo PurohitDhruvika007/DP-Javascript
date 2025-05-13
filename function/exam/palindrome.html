@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let n=parseInt(prompt("enter the number="));
+        function palindrome(n)
+        {
+            let real=n;
+            let ld=0;
+            let rev=0;
+            while(n>0)
+        {
+            ld=Math.floor(n%10);
+            rev=(rev*10)+ld;
+            n=Math.floor(n/10);
+        }
+        if(real==rev)
+        {
+            document.writeln("number is palindrome");
+        }
+        else
+        {
+            document.writeln("number is not palindrome");
+        }
+        }
+        palindrome(n);
+    </script>
+</body>
+</html>
