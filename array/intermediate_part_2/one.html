@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // wap to find duplicate elements from the array.
+        let array=[45,3,56,3,36,76,-2,-2,76,-2,0];
+        for(let i=0;i<array.length;i++)
+    {
+        repeat=true;
+        for(let j=i+1;j<array.length;j++)
+    {
+        if(array[i]==array[j])
+    {
+        if(repeat==true)
+    {
+        document.writeln(array[i]);
+        repeat=false;
+        array.splice(j,1);
+    }
+    }
+    }
+    }
+    </script>
+</body>
+</html>

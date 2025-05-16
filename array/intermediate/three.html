@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // wap to find minimum element of array using method.
+        let array=[36,65,13,42,11];
+        let ans=array.reduce((a,b)=>
+    {
+        if(a>b)
+    {
+        a=b;
+    }
+    return a;
+    }
+    )
+    document.writeln(ans);
+    </script>
+</body>
+</html>

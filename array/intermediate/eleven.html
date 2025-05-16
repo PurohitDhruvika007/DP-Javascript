@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // wap to find combinations of addition for user given number in array.
+        let element=parseInt(prompt("enter the total number of elements="));
+        let array=[];
+        for(let i=0;i<element;i++)
+    {
+        input=parseInt(prompt("enter input number="));
+        array.push(input);
+    }
+    let number=parseInt(prompt("enter the number="));
+    document.writeln(array+"<br>");
+    for(let i=0;i<array.length;i++)
+    {
+        for(let j=i+1;j<array.length;j++)
+    {
+        if((array[i]+array[j])==number)
+    {
+        document.writeln([array[i],array[j]]+"<br>");
+    }
+    }
+    }
+
+    </script>
+</body>
+</html>
