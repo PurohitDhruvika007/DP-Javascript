@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let maths=parseFloat(prompt("enter the marks of maths="));
+        let science=parseFloat(prompt("enter the marks of science="));
+        let hindi=parseFloat(prompt("enter the marks of hindi="));
+        let english=parseFloat(prompt("enter the marks of english= "));
+        let grammar=parseFloat(prompt("enter the marks of grammar="));
+        total=maths+science+hindi+english+grammar;
+        average=total/5;
+        document.writeln("total of subject is ",total,"<br>");
+        document.writeln("average of subject is ",average,"<br>");
+        if(average>=90 && average<=100)
+    {
+        document.writeln("grade is A");
+    }
+    else if(average<90 && average>=80)
+    {
+        document.writeln("grade is B");
+    }
+    else if(average<80 && average>=60)
+    {
+        document.writeln("grade is C");
+    }
+    else if (average<60 && average>=33.33)
+    {
+        document.writeln("grade is D");
+    }
+    else
+    {
+        document.writeln("sorry ! you are fail");
+    }
+    </script>
+</body>
+</html>

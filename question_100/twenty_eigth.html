@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Create a calculator using switch-case (add, subtract, multiply, divide).
+        let a=parseInt(prompt("enter a="));
+        let b=parseInt(prompt("enter b="));
+        let choice=prompt("enter your choice=");
+        switch(choice)
+        {
+            case "+":document.writeln("addition is ",a+b);
+            break;
+            case "-":document.writeln("substraction is ",a-b);
+            break;
+            case "*":document.writeln("multiplication is ",a*b);
+            break;
+            case "/":document.writeln("division is ",a/b);
+            break;
+            default:document.writeln("enter valid choice");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let pie=3.14;
+        let choice=parseInt(prompt("enter the choice="));
+        switch(choice)
+        {
+            case 1:let r=parseInt(prompt("enter radius="));
+            let circle=pie*(r*r);
+            document.writeln("area of circle is ",circle);
+            break;
+            case 2:let width=parseInt(prompt("enter width="));
+            let height=parseInt(prompt("enter height="));
+            document.writeln("area of rectangle is ",height*width);
+            break;
+            case 3:let side=parseInt(prompt("enter side="));
+            document.writeln("area of square is ",side*side);
+        }
+    </script>
+</body>
+</html>

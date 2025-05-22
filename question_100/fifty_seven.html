@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        n=parseInt(prompt("enter n="));
+        let array=[];
+        for(let i=1;i<=n;i++)
+    {
+        input=parseInt(prompt("enter the input elements="));
+        array.push(input);
+    }
+    for(let j=0;j<array.length;j++)
+    {
+        if(array[j]%2==0 && array[j]%3==0 && array[j]%5==0)
+    {
+        document.writeln(array[j]);
+    }
+    }
+    </script>
+</body>
+</html>

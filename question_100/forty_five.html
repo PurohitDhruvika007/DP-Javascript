@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let num=parseInt(prompt("enter the number="));
+        count=0;
+        let arm=0;
+        let real=num;
+        let og=num;
+        while(og>0)
+    {
+        count+=1;
+        og=Math.floor(og/10);
+    }
+    let ld=0;
+    
+    while(num>0)
+    {
+        ld=Math.floor(num%10);
+        ans=1;
+        for(let i=1;i<=count;i++)
+    {
+        ans*=ld;
+    }
+    arm+=ans;
+    num=Math.floor(num/10);
+    }
+    if(real==arm)
+    {
+        document.writeln("this is armstrong number");
+    }
+    else
+    {
+        document.writeln("this is not armstrong number");
+    }
+    </script>
+</body>
+</html>

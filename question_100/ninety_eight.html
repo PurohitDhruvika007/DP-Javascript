@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        n=parseInt(prompt("enter n="));
+        student=[];
+        for(let i=1;i<=n;i++)
+    {
+        input=parseInt(prompt("enter the input="));
+        student.push(input);
+    }
+    for(let i=0;i<student.length;i++)
+    {
+        for(let j=i+1;j<student.length;j++)
+    {
+        if(student[i]<student[j])
+    {
+        temp=student[i];
+        student[i]=student[j];
+        student[j]=temp;
+    }
+    }
+    }
+    for(let i=0;i<=2;i++)
+    {
+        document.writeln(student[i]);
+    }
+    </script>
+</body>
+</html>

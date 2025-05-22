@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let score=0;
+        let q1=parseInt(prompt("Inside which HTML element do we put the JavaScript?\n1.<script>\n2.<javascript>\n3.<js>\n2.<scripting>"));
+       if(q1==1)
+       {
+        score+=1;
+       }
+        let q2=parseInt(prompt(" Which of the following is correct about JavaScript?\n1. JavaScript is an Object-Based language\n2. JavaScript is Assembly-language\n3.JavaScript is an Object-Oriented language\n4.JavaScript is a High-level language"));
+        if(q2==1)
+       {
+        score+=1;
+       }
+        let q3=parseInt(prompt(" What does HTML stand for?\n1.Markup Language\n2. HighText Machine Language\n3. Hyper Tool Markup Language\n4.Hyper Text Markup Language"));
+        if(q3==4)
+       {
+        score+=1;
+       }
+       document.writeln("your score is ",score);
+    </script>
+</body>
+</html>

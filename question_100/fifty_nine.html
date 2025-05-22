@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        num=parseInt(prompt("enter the number="));
+        let first=0;
+        let second=1;
+        let found=false;
+        while(first<=num)
+    {
+        if(first==num)
+    {
+        found=true;
+        break;
+    }
+    second=first+second;
+    first=second;
+    }
+    if(found)
+    {
+        document.writeln("number is of fibonacci series");
+    }
+    else
+    {
+        document.writeln("number is not of fibonacci series");
+    }
+    </script>
+</body>
+</html>

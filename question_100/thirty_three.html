@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        a=parseInt(prompt("enter a="));
+        b=parseInt(prompt("enter b="));
+        if(a>b)
+    {
+        greater=a;
+    }
+    else
+    {
+        greater=b;
+    }
+    lcm=greater;
+    while(true)
+    {
+        if(lcm%a==0 && lcm%b==0)
+    {
+        break;
+    }
+    lcm++;
+    }
+    document.writeln("the lcm of ",a," and ",b," is ",lcm);
+    </script>
+</body>
+</html>

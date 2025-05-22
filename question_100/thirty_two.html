@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a=parseInt(prompt("enter a="));
+        let b=parseInt(prompt("enter b="));
+        let gd=1;
+        if(a<b)
+    {
+        smaller=a;
+    }
+    else
+    {
+        smaller=b;
+    }
+    for(let i=1;i<=smaller;i++)
+    {
+        if(a%i==0 && b%i==0)
+    {
+        gd=i;
+    }
+    }
+    document.writeln("gretest divisor is of a and b is ",gd)
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let array=[1,2,3,4,5];
+        function sorted(num)
+        {
+            for(let i=0;i<num.length;i++)
+        {
+            if(num[i]<num[i-1])
+        {
+            return false;
+        }
+        }
+        return true;
+        }
+        if(sorted(array))
+        {
+            document.writeln("array is sorted");
+        }
+        else
+        {
+            document.writeln("array is not sorted");
+        }
+    </script>
+</body>
+</html>

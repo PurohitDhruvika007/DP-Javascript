@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       let n=parseInt(prompt("number of students="));
+       let  student=[];
+        for(let i=1;i<=n;i++)
+    {
+        name=prompt("enter the name=");
+        mark=parseInt(prompt("enter the marks="));
+        student.push({name: name,mark: mark});
+    }
+    let top_student=student[0];
+
+    for(let j=0;j<student.length;j++)
+    {
+        if(student[j].mark>top_student.mark)
+    {
+        top_student=student[j];
+    }
+    }
+    document.writeln("topper student is ",top_student.name," ",top_student.mark);
+
+    </script>
+</body> 
+</html>

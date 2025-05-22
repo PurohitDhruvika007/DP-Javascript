@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let student=[
+            {
+                name:"one",
+                mark:45
+            },
+            {
+                name:"two",
+                mark:26
+            },
+            {
+                name:"three",
+                mark:49
+            },
+            {
+                name:"four",
+                mark:42
+            },
+            {
+                name:"five",
+                mark:20
+            }
+        ];
+        student.sort((a,b)=>a.mark-b.mark);
+        for(let i=0;i<student.length;i++)
+        {
+            document.writeln(student[i].name);
+            document.writeln(student[i].mark,"<br>");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Create a program that accepts a number and tells if it's a single, double, or triple-digit number.
+        num=parseInt(prompt("enter the number="))
+        count=0;
+        while(num>0)
+    {
+        count+=1;
+        num=Math.floor(num/10);
+    }
+    if(count==1)
+    {
+        document.writeln("it is single-digit number");
+    }
+    else if(count==2)
+    {
+        document.writeln("it is double-digit number");
+    }
+    else if(count==3)
+    {
+        document.writeln("it is triple-digit number");
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let sum=0;
+        let array=[];
+        for(let i=1;i<=10;i++)
+    {
+        input=parseInt(prompt("enter the input="));
+        array.push(input);
+    }
+    for(i=0;i<array.length;i++)
+    {
+        if(array[i]%2!==0)
+    {
+        sum+=array[i];
+    }
+}
+    document.writeln("sum of odd number is ",sum);
+    </script>
+</body>
+</html>

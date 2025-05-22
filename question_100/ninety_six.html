@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let array=[23,45,7,-5,0,13,45,45,23,20,20];
+        sum=0;
+        for(let i=0;i<array.length;i++)
+    {
+        count=0;
+        for(let j=i+1;j<array.length;j++)
+    {
+        if(array[i]==array[j])
+    {
+        count+=1;
+        array.splice(j,1);
+        j--;
+    }
+    }
+    if(count>0)
+    {
+        sum+=1;
+    }
+    }
+    document.writeln("total count of repeated element is ",sum);
+    </script>
+</body>
+</html>

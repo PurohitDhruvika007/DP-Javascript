@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let array=[3,11,9,8,5,15,2];
+        function isprime(num)
+        {
+            if(num<2)
+        {
+            return false;
+        }
+        for(let i=2;i<=Math.sqrt(num);i++)
+        {
+            if(num%i==0)
+        {
+            return false;
+        }
+        }
+        return true;
+        }
+        count=0;
+        for(let i=0;i<array.length;i++)
+        {
+            if(isprime(array[i]))
+        {
+            count+=1;
+        }
+        }
+        document.writeln(count);
+    </script>
+</body>
+</html>

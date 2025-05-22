@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let array=[45,99,49,78,79];
+        let sum=0;
+        total=array.map((n)=>{
+            sum+=n;
+        })
+        avg=sum/array.length;
+        if(avg>=90 && avg<=100)
+        {
+            document.writeln("A");
+        }
+        else if(avg>=80 && avg<90)
+        {
+            document.writeln("B");
+        }
+        else if(avg>=60 && avg<80)
+        {
+            document.writeln("C");
+        }
+        else if(avg>=33.33 && avg<60)
+        {
+            document.writeln("D");
+        }
+        else
+        {
+            document.writeln("E");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       let array=["apple","banana","strawberry","mango","melon"];
+       let long_length="";
+       for(let i=0;i<array.length;i++)
+       {
+        let count=0;
+        for(let j=0;j<array[i].length;j++)
+       {
+        count+=1;
+       }
+       if(count>long_length.length)
+       {
+        long_length=array[i];
+       }
+       }
+       document.writeln("the long lengthword is ",long_length);
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str=prompt("enter the string=");
+        let alphabet=0;
+        let digit=0;
+        let space=0;
+        let special_char=0
+        for(let i=0;i<str.length;i++)
+    {
+        if((str[i]>="A" && str[i]<='Z')||(str[i]>="a" && str[i]<='z'))
+    {
+        alphabet+=1;
+    }
+    else if(str[i]>="0" && str[i]<="9")
+    {
+        digit+=1;
+    }
+    else if(str[i]==" ")
+    {
+        space+=1;
+    }
+    else
+    {
+        special_char+=1;
+    }
+    }
+    document.writeln("total alphabet are ",alphabet,"<br>");
+    document.writeln("total digits are ",digit,"<br>");
+    document.writeln("total space are ",space,"<br>");
+    document.writeln("total special_charcter are ",special_char);
+    </script>
+</body>
+</html>

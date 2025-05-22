@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        candidate1=parseInt(prompt("enter votes of candidate 1="));
+        candidate2=parseInt(prompt("enter votes of candidate 2="));
+        candidate3=parseInt(prompt("enter votes of candidate 3="));
+        if(candidate1>candidate2 && candidate1>candidate3)
+    {
+        document.writeln("candidate 1 is winner");
+    }
+    else if(candidate2>candidate1 && candidate2>candidate3)
+    {
+        document.writeln("candidate 2 is winner");
+    }
+    else
+    {
+        document.writeln("candidate 3 is winner");
+    }
+    </script>
+</body>
+</html>
