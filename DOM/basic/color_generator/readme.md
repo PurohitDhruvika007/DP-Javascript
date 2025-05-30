@@ -10,35 +10,35 @@
 <p>=>Smooth transition animations</p>
 <p>=>Responsive design for desktop and mobile devices</p>
 
-🛠️ Technologies Used
-=>HTML5 – Structure of the web page
-=>CSS3 – Styling and responsive layout
-=>JavaScript (Vanilla) – DOM manipulation and color generation logic
+<h2>🛠️ Technologies Used</h2>
+<p>=>HTML5 – Structure of the web page</p>
+<p>=>CSS3 – Styling and responsive layout</p>
+<p>=>JavaScript (Vanilla) – DOM manipulation and color generation logic</p>
 
-🚀 How It Works
-=>Open the app in any modern web browser.
-=>Click the "Generate Color" button.
-=>The page background changes to a new randomly generated color.
-=>The hexadecimal code of the current color is displayed on screen.
+<h2>🚀 How It Works</h2>
+<p>=>Open the app in any modern web browser.</p>
+<p>=>Click the "Generate Color" button.</p>
+<p>=>The page background changes to a new randomly generated color.</p>
+<p>=>The hexadecimal code of the current color is displayed on screen.</p>
 
-📁 File Structure
-=>index.html – Contains the structure of the web interface.
-=>style.css – Defines the visual presentation and layout.
-=>script.js – Implements the random color generation and DOM interaction.
+<h2>📁 File Structure</h2>
+<p>=>index.html – Contains the structure of the web interface.</p>
+<p>=>style.css – Defines the visual presentation and layout.</p>
+<p>=>script.js – Implements the random color generation and DOM interaction.</p>
 
-🔧 Customization Ideas
-=>Add RGB or HSL values alongside hex codes.
-=>Include a copy-to-clipboard button.
-=>Display a history of previously generated colors.
-=>Allow saving favorite colors for reuse or export.
-=>Use CSS variables to enable theme switching.
+<h2>🔧 Customization Ideas</h2>
+<p>=>Add RGB or HSL values alongside hex codes.</p>
+<p>=>Include a copy-to-clipboard button.</p>
+<p>=>Display a history of previously generated colors.</p>
+<p>=>Allow saving favorite colors for reuse or export.</p>
+<p>=>Use CSS variables to enable theme switching.</p>
 
-💡 Ideal For
-=>Beginners learning JavaScript and DOM manipulation
-=>Web design students practicing UI interactivity
-=>Personal portfolios or mini-project showcases
+<h2>💡 Ideal For</h2>
+<p>=>Beginners learning JavaScript and DOM manipulation</p>
+<p>=>Web design students practicing UI interactivity</p>
+<p>=>Personal portfolios or mini-project showcases</p>
 
-📹video
+<h2>📹video</h2>
 
 https://github.com/user-attachments/assets/4a40ee7b-1001-4f28-a4fc-15ab192ffaff
 
