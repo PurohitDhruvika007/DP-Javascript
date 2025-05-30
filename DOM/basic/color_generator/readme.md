@@ -1,15 +1,14 @@
-🎨 Random Color Generator – Project Description
+<h1>🎨 Random Color Generator – Project Description</h1>
 
-Overview
-=>The Random Color Generator is a lightweight, responsive web application built using HTML, CSS, and JavaScript. It allows users to generate random colors with a single click and displays the result both visually (as the background color) and textually (as a hexadecimal color code). This project is perfect for beginners learning DOM manipulation and styling with JavaScript.
+<h2>Overview</h2>
+<p>The Random Color Generator is a lightweight, responsive web application built using HTML, CSS, and JavaScript. It allows users to generate random colors with a single click and displays the result both visually (as the background color) and textually (as a hexadecimal color code). This project is perfect for beginners learning DOM manipulation and styling with JavaScript.</p>
 
-✨ Features
-=>One-click random color generation
-
-=>Displays color in hexadecimal format
-=>Instant background update based on generated color
-=>Smooth transition animations
-=>Responsive design for desktop and mobile devices
+<h2>✨ Features</h2>
+<p>=>One-click random color generation</p>
+<p>=>Displays color in hexadecimal format</p>
+<p>=>Instant background update based on generated color</p>
+<p>=>Smooth transition animations</p>
+<p>=>Responsive design for desktop and mobile devices</p>
 
 🛠️ Technologies Used
 =>HTML5 – Structure of the web page
