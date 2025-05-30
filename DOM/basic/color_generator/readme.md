@@ -5,6 +5,7 @@ Overview
 
 ✨ Features
 =>One-click random color generation
+
 =>Displays color in hexadecimal format
 =>Instant background update based on generated color
 =>Smooth transition animations
