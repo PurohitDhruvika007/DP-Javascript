@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>📝 Text Utils Web App – Project Description</title>
-</head>
-<body>
+
   <h1>📝 Text Utils Web App – Project Description</h1>
 
   <h2>Overview</h2>
@@ -71,5 +64,3 @@
 
 https://github.com/user-attachments/assets/c3028e2c-1083-432f-82e8-cec9bf5b750c
 
-</body>
-</html>
