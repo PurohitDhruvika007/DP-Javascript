@@ -71,29 +71,57 @@ const answer=[
 
 const question=document.querySelector('#question');
 const options=document.querySelectorAll('.option');
-const input=document.querySelectorAll('.form-check-input');
+const inputs=document.querySelectorAll('.form-check-input');
 const submit=document.querySelector('#submit');
-let current=0;
+const score=document.querySelector('#score');
 
-function check(index)
+let current=0;
+let count=0;
+let userAns=[];
+
+function show(index)
 {
     question.textContent="Q"+(index+1)+" "+data[index].question;
     options.forEach((options,i)=>{
         options.textContent=data[index].options[i];
     });
 }
-check(current);
+function check(index)
+{
+    inputs.forEach((input,i)=>{
+        if(input.checked)
+        {
+            userAns.push(data[index].options[i]);
+        }
+    })
+}
+function scorecount()
+{
+    for(let i=0;i<data.length;i++)
+    {
+        if(userAns[i]==answer[i])
+        {
+            count++;
+        }
+    }
+}
+show(current);
 submit.addEventListener('click',()=>{
-    current+=1;
+    
     if(current<data.length)
     {
         check(current);
+        current+=1;
+        if(current<data.length)
+        {
+        show(current);
+        }
     }
-    else
+   if(current==data.length)
     {
-        current=0;
-        check(current);
+        scorecount();
+        score.textContent="score : "+count+"/10";
+        current++;
     }
     
 });
-
