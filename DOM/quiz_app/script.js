@@ -70,58 +70,56 @@ const answer=[
 ];
 
 const question=document.querySelector('#question');
-const options=document.querySelectorAll('.option');
 const inputs=document.querySelectorAll('.form-check-input');
+const options=document.querySelectorAll('.options');
 const submit=document.querySelector('#submit');
 const score=document.querySelector('#score');
 
-let current=0;
 let count=0;
+let current=0;
 let userAns=[];
 
 function show(index)
 {
-    question.textContent="Q"+(index+1)+" "+data[index].question;
-    options.forEach((options,i)=>{
-        options.textContent=data[index].options[i];
-    });
+  question.textContent="Q "+(index+1)+data[index].question;
+  options.forEach((option,i)=>{
+    option.textContent=data[index].options[i];
+  })
 }
 function check(index)
 {
-    inputs.forEach((input,i)=>{
-        if(input.checked)
-        {
-            userAns.push(data[index].options[i]);
-        }
-    })
-}
-function scorecount()
-{
-    for(let i=0;i<data.length;i++)
+  inputs.forEach((input,i)=>{
+    if(input.checked)
     {
-        if(userAns[i]==answer[i])
-        {
-            count++;
-        }
+      userAns.push(data[index].options[i]);
     }
+  })
+}
+function countScore()
+{
+  for(let i=0;i<data.length;i++)
+  {
+    if(userAns[i]==answer[i])
+      {
+        count++;
+      }
+  }
 }
 show(current);
 submit.addEventListener('click',()=>{
-    
+  if(current<data.length)
+  {
+    check(current);
+    current++;
     if(current<data.length)
     {
-        check(current);
-        current+=1;
-        if(current<data.length)
-        {
-        show(current);
-        }
+      show(current);
     }
-   if(current==data.length)
-    {
-        scorecount();
-        score.textContent="score : "+count+"/10";
-        current++;
-    }
-    
+  }
+  if(current==data.length)
+  {
+    countScore();
+    score.textContent="score : "+count+"/10";
+    current++;
+  }
 });
