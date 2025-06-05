@@ -47,7 +47,7 @@ Counter: 0 1 2 3 ...
     <tag>Frontend</tag>
   </p>
 
-  <h2>🎥vedio</h2>
+  <h2>🎥video</h2>
 
 https://github.com/user-attachments/assets/c515fa1e-ba01-445f-98c9-696c9c97216a
 
