@@ -1,0 +1,207 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+
+}
+
+nav {
+    background-color: #27374D;
+    color: #DDE6ED;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    top: 0px;
+    font-style: "Poppins", sans-serif;
+}
+
+.nav-link:hover {
+    color: #9DB2BF;
+    border-bottom: 2px solid #9DB2BF;
+}
+
+.nav-link {
+    color: #DDE6ED;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.hero-section {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/main.jpg');
+    height: 100vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.content {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 47%;
+    text-align: center;
+}
+
+.travel {
+    font-size: 140px;
+    font-weight: 500;
+    letter-spacing: 25px;
+    color: white;
+}
+
+.headline {
+    color: white;
+    font-size: 25px;
+}
+
+.subheading {
+    color: #DDE6ED;
+    font-size: 20px;
+}
+
+.button .btn {
+    background-color: #DDE6ED;
+    margin-left: 15px;
+}
+
+.button .btn a {
+    color: #27374D;
+    text-decoration: none;
+}
+
+.why-choose-us-section li {
+    list-style: square;
+}
+
+.choose {
+    text-indent: 80px;
+}
+
+.travelrs {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.main {
+    font-family: "Lato", sans-serif;
+}
+
+p {
+    font-size: 15px;
+}
+
+.travelrs h5 {
+    font-style: italic;
+}
+
+.registration-section,
+.contact-section,
+.login-section {
+    height: fit-content;
+    width: 400px;
+    background-color: white;
+    margin: auto;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    ;
+}
+
+input {
+    width: 300px;
+    border: none;
+    border-bottom: 2px solid grey;
+    outline: none;
+}
+
+::placeholder {
+    padding-left: 7px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.forgot a {
+    color: red;
+}
+
+.link:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.blog {
+    width: 350px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.blog img {
+    width: 100%;
+    border-radius: 10px;
+    height: 230px;
+}
+
+.blog img:hover {
+    transform: scale(1.1);
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.blog p {
+    height: 80px;
+}
+
+.info-section {
+    background-color: #27374D;
+    color: #DDE6ED;
+}
+
+textarea {
+    outline: none;
+    border: none;
+    border-bottom: 2px solid grey;
+    width: 300px;
+    margin: auto;
+}
+
+.three i {
+    font-size: 30px;
+    color: #DDE6ED;
+}
+
+.three i:hover {
+    color: black;
+}
+
+.btn {
+    background-color: #27374D;
+    color: #DDE6ED;
+}
+
+.btn a {
+    color: #DDE6ED;
+    border: none;
+}
+
+.btn:hover {
+    color: #27374D;
+    background-color: #DDE6ED;
+}
+
+.btn a:hover {
+    color: #27374D;
+    border: none;
+}
