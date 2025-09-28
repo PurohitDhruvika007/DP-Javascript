@@ -35,10 +35,8 @@
   <pre>
 1. Your heart is the size of an ocean...
 ~ Rumi
-
 2. The Bay of Bengal is hit frequently...
 ~ Abdul Kalam
-
 3. Thinking is the capital...
 ~ Abdul Kalam
   </pre>
@@ -60,5 +58,5 @@
 
   <h2>🎥video</h2>
 
-https://github.com/user-attachments/assets/51021da1-22bd-4ac0-bdb5-6916680a7b5e
+https://github.com/user-attachments/assets/f4b217df-166c-420d-9812-ce20fab7c68c
 
