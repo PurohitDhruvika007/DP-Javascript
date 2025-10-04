@@ -1,32 +1,73 @@
+const form = document.getElementById("loginForm");
 const username = document.getElementById("username");
 const email = document.getElementById("email");
 const password = document.getElementById("password");
-const submit = document.getElementById("submit");
-const p = document.getElementById("para");
-const emailRegx=/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
-const passwordRegx=/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
+const togglePassword = document.getElementById("togglePassword");
 
-submit.addEventListener('click',(event)=>{
-    event.preventDefault();
-    if(username.value=="" && email.value=="" && password.value=="")
-    {
-        p.textContent=("* all feild are required");
+const userError = document.getElementById("userError");
+const emailError = document.getElementById("emailError");
+const passError = document.getElementById("passError");
+const formMsg = document.getElementById("formMsg");
+
+const emailRegx = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}$/;
+const passwordRegx = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+
+// Show/hide password
+togglePassword.addEventListener("click", () => {
+    const type = password.getAttribute("type") === "password" ? "text" : "password";
+    password.setAttribute("type", type);
+    togglePassword.classList.toggle("bi-eye");
+    togglePassword.classList.toggle("bi-eye-slash");
+});
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    formMsg.textContent = "";
+
+    let valid = true;
+
+    // Username
+    if (username.value.trim() === "") {
+        userError.textContent = "* Username is required";
+        userError.classList.add("show");
+        valid = false;
+    } else {
+        userError.textContent = "";
+        userError.classList.remove("show");
     }
-    else if(!emailRegx.test(email.value) && passwordRegx.test(password.value))
-    {
-        p.textContent="* email is invalid";
+
+    // Email
+    if (email.value.trim() === "") {
+        emailError.textContent = "* Email is required";
+        emailError.classList.add("show");
+        valid = false;
+    } else if (!emailRegx.test(email.value)) {
+        emailError.textContent = "* Invalid email format";
+        emailError.classList.add("show");
+        valid = false;
+    } else {
+        emailError.textContent = "";
+        emailError.classList.remove("show");
     }
-    else if(emailRegx.test(email.value) && !passwordRegx.test(password.value))
-    {
-        p.textContent="* password is invalid";
+
+    // Password
+    if (password.value.trim() === "") {
+        passError.textContent = "* Password is required";
+        passError.classList.add("show");
+        valid = false;
+    } else if (!passwordRegx.test(password.value)) {
+        passError.textContent = "* Must include uppercase, lowercase, number (8+ chars)";
+        passError.classList.add("show");
+        valid = false;
+    } else {
+        passError.textContent = "";
+        passError.classList.remove("show");
     }
-    else if(emailRegx.test(email.value) && passwordRegx.test(password.value))
-    {
-        p.className="text-primary";
-        p.textContent="password and email both are valid";
-    }
-    else if(!emailRegx.test(email.value) && !passwordRegx.test(password.value))
-    {
-        p.textContent="* password and email both are invalid";
+
+    // Success message
+    if (valid) {
+        formMsg.textContent = "✅ Login Successful!";
+        form.reset();
+        setTimeout(() => (formMsg.textContent = ""), 3000);
     }
 });
