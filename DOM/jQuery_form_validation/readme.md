@@ -53,4 +53,7 @@ js
 /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/
 ----
 ## 🎥 video
-https://github.com/user-attachments/assets/aa097c18-4a41-4940-b26e-16065005400e
+
+
+https://github.com/user-attachments/assets/b50d59d9-b7df-4ee5-84e5-fa94c53c1441
+
