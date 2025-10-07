@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sticky Notes Board</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap');
+
+    body {
+      font-family: 'Kalam', cursive;
+      background: radial-gradient(circle at top, #ffecd2, #fcb69f);
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 3rem;
+      color: #4a2c2a;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .note-input {
+      background: #fff;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+      width: 80%;
+      max-width: 700px;
+      margin: 30px auto;
+    }
+
+    .note-input input,
+    .note-input textarea {
+      border: none;
+      border-radius: 8px;
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      outline: none;
+      font-size: 1.1rem;
+      background-color: #fff9f3;
+      box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .note-input button {
+      border: none;
+      border-radius: 25px;
+      padding: 8px 20px;
+      margin-right: 10px;
+      font-weight: 600;
+      color: white;
+      background: linear-gradient(135deg, #ff9a9e, #fecfef);
+      box-shadow: 0 3px 8px rgba(255, 105, 135, 0.4);
+      transition: all 0.3s ease;
+    }
+
+    .note-input button:hover {
+      transform: scale(1.05);
+      background: linear-gradient(135deg, #fcb69f, #ffecd2);
+    }
+
+    #notes-board {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      padding: 20px;
+    }
+
+    .note {
+      width: 200px;
+      height: auto;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s;
+      word-wrap: break-word;
+      position: relative;
+    }
+
+    .note:hover {
+      transform: scale(1.05) rotate(0deg);
+    }
+
+    .note h4 {
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+    }
+
+    .note p {
+      font-size: 1rem;
+    }
+
+    .note button {
+      border: none;
+      border-radius: 15px;
+      padding: 3px 10px;
+      font-size: 0.8rem;
+      margin-right: 5px;
+      margin-top: 10px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .update-btn {
+      background: #00bfa6;
+    }
+
+    .delete-btn {
+      background: #ff5252;
+    }
+
+    @media (max-width: 600px) {
+      .note-input {
+        width: 90%;
+      }
+
+      .note {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Sticky Notes Board 🧡</h1>
+
+  <div class="note-input">
+    <input type="text" id="input-head" placeholder="Enter note title..." />
+    <textarea id="input" rows="3" placeholder="Write your note here..."></textarea>
+    <div class="text-center">
+      <button id="add">Add Note</button>
+      <button id="cancel" style="background: #aaa;">Cancel</button>
+    </div>
+  </div>
+
+  <div id="notes-board"></div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
