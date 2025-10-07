@@ -1,42 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beautiful Image Slider</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
     <style>
-        img
-        {
-            border-radius: 30px;
-            transition: 0.4s;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            opacity: 0.8;
+        /* 🌅 Background */
+        body {
+            background: linear-gradient(135deg, #c3a5f7, #f6d4f7, #b0e0f8);
+            background-size: 200% 200%;
+            animation: gradientMove 8s ease infinite;
+            font-family: "Poppins", sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
         }
-        img:hover
-        {
-            transform: scale(1.2);
+
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* 🖼️ Image Styles */
+        img {
+            border-radius: 25px;
+            transition: transform 0.6s ease, opacity 0.6s ease, box-shadow 0.4s;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            border: 5px solid rgba(255, 255, 255, 0.6);
+            opacity: 0.9;
+        }
+
+        img:hover {
+            transform: scale(1.07);
             opacity: 1;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+        }
+
+        /* 🎨 Container */
+        .slider-container {
+            text-align: center;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.2);
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-weight: 700;
+            color: #3c096c;
+            text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8);
+        }
+
+        /* 🕹️ Buttons */
+        button {
+            transition: all 0.3s ease;
+            border-radius: 50%;
+            padding: 12px 18px;
+            font-size: 1.2rem;
+        }
+
+        #previous,
+        #next {
+            background: rgba(255, 255, 255, 0.3);
+            border: none;
+            color: #3c096c;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        #previous:hover,
+        #next:hover {
+            background: #3c096c;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        /* 🎬 Auto-play and Stop Buttons */
+        #auto,
+        #stop {
+            background: #3c096c;
+            border: none;
+            color: white;
+            font-weight: 500;
+            border-radius: 25px;
+            padding: 8px 25px;
+            transition: all 0.3s;
+        }
+
+        #auto:hover {
+            background: #5a189a;
+            box-shadow: 0 6px 20px rgba(90, 24, 154, 0.4);
+        }
+
+        #stop {
+            background: #b5179e;
+        }
+
+        #stop:hover {
+            background: #e01e93;
+            box-shadow: 0 6px 20px rgba(224, 30, 147, 0.4);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            img {
+                width: 90%;
+                height: auto;
+            }
+
+            #previous,
+            #next {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
+
 <body>
-    <div class="container">
-        <h1 class="text-center">SLIDER</h1>
-            <div class="d-flex justify-content-center"><div>
-                <button class="btn btn-dark border rounded-circle" id="previous">&lt;</button>
-            <img src="https://avatars.mds.yandex.net/get-mpic/5288539/img_id7831558020096983321.jpeg/orig" alt="" id="image" height="500px" width="700px" class="mx-4 my-1 border border-dark border-3 rounded">
-            <button class="btn btn-dark border rounded-circle " id="next">&gt;</button>
-            </div></div>
-        <div class="d-flex justify-content-center mt-3">
-           <div>
-             <button class="btn btn-dark me-4" id="auto">Auto play</button>
-            <button class="btn btn-dark" id="stop">Stop auto play</button>
-           </div>
+    <div class="slider-container">
+        <h1 class="mb-4">✨ Beautiful Image Slider ✨</h1>
+
+        <div class="d-flex justify-content-center align-items-center mb-3">
+            <button id="previous">&lt;</button>
+            <img src="https://avatars.mds.yandex.net/get-mpic/5288539/img_id7831558020096983321.jpeg/orig" alt=""
+                id="image" height="500px" width="700px" class="mx-4" />
+            <button id="next">&gt;</button>
+        </div>
+
+        <div class="mt-3">
+            <button id="auto" class="me-3">Auto Play</button>
+            <button id="stop">Stop</button>
         </div>
     </div>
+
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
 </html>
