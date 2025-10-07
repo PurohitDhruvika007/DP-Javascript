@@ -59,8 +59,5 @@
 
   <h2>🎥 video</h2>
 
-https://github.com/user-attachments/assets/3465f9a8-eb5f-4ad8-9b34-e82c5ad4939a
-
-
-</body>
+https://github.com/user-attachments/assets/ed697286-6c74-4366-92c1-501ac082c18e
 
