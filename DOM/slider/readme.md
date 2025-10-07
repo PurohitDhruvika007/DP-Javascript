@@ -64,4 +64,5 @@ This project is a responsive **Image Slider (Carousel)** web application built u
 </ul>
 ## 🎥 video
 
-https://github.com/user-attachments/assets/26a03751-567c-4d28-b67b-9b303160907d
+https://github.com/user-attachments/assets/cf2b507d-b717-4bdb-b2fb-d414e3b78b6e
+
