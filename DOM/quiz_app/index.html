@@ -1,83 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
-  </head>
-  <body>
-    <!-- container  -->
-    <div class="container">
-      <!-- header  -->
-      <h1>QUIZ</h1>
-      <!-- question -->
-      <div id="question"></div>
-      <!-- options -->
-      <!-- option 1  -->
-      <div class="form-check">
-        <input
-          class="form-check-input"
-          type="radio"
-          name="radioDefault"
-          id="radioDefault1"
-        />
-        <label class="form-check-label" for="radioDefault1">
-          A. <span class="options"></span>
-        </label>
-      </div>
-      <!-- option 2  -->
-      <div class="form-check">
-        <input
-          class="form-check-input"
-          type="radio"
-          name="radioDefault"
-          id="radioDefault1"
-        />
-        <label class="form-check-label" for="radioDefault1">
-          B. <span class="options"></span>
-        </label>
-      </div>
-      <!-- option 3  -->
-      <div class="form-check">
-        <input
-          class="form-check-input"
-          type="radio"
-          name="radioDefault"
-          id="radioDefault1"
-        />
-        <label class="form-check-label" for="radioDefault1">
-          C. <span class="options"></span>
-        </label>
-      </div>
-      <!-- option 4  -->
-      <div class="form-check">
-        <input
-          class="form-check-input"
-          type="radio"
-          name="radioDefault"
-          id="radioDefault1"
-        />
-        <label class="form-check-label" for="radioDefault1">
-          D. <span class="options"></span>
-        </label>
-      </div>
-      <!-- button  -->
-       <button class="btn btn-primary my-3" id="submit">submit & next</button>
-       <!-- score -->
-        <p class="fs-3" id="score"></p>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz Time</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #f6d365, #fda085);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .quiz-container {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 40px;
+      border-radius: 25px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 600px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .quiz-container:hover {
+      transform: translateY(-5px);
+    }
+
+    h1 {
+      font-weight: 700;
+      margin-bottom: 25px;
+      color: #6a0dad;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.15);
+    }
+
+    #question {
+      font-size: 1.4rem;
+      margin-bottom: 30px;
+      font-weight: 500;
+    }
+
+    .form-check {
+      background: #fdf6fb;
+      margin-bottom: 18px;
+      padding: 14px 18px;
+      border-radius: 15px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+      transition: all 0.25s;
+      cursor: pointer;
+    }
+
+    .form-check:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+      background: #f5e8fb;
+    }
+
+    .form-check-input {
+      margin-right: 15px;
+      accent-color: #6a0dad;
+      transform: scale(1.2);
+    }
+
+    .btn {
+      background: linear-gradient(135deg, #6a0dad, #b5179e);
+      border: none;
+      color: white;
+      font-weight: 600;
+      border-radius: 30px;
+      padding: 12px 30px;
+      font-size: 1.1rem;
+      transition: all 0.3s;
+      margin-top: 20px;
+      box-shadow: 0 8px 20px rgba(106, 13, 173, 0.35);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(106, 13, 173, 0.5);
+      background: linear-gradient(135deg, #b5179e, #6a0dad);
+    }
+
+    #score {
+      margin-top: 30px;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #6a0dad;
+    }
+
+    @media (max-width: 480px) {
+      .quiz-container {
+        padding: 25px;
+      }
+
+      #question {
+        font-size: 1.2rem;
+      }
+
+      .btn {
+        padding: 10px 20px;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="quiz-container">
+    <h1>QUIZ TIME</h1>
+
+    <!-- Question -->
+    <div id="question"></div>
+
+    <!-- Options -->
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="radioDefault" id="radio1" />
+      <label class="form-check-label" for="radio1">A. <span class="options"></span></label>
     </div>
-    <!-- script file  -->
-    <script src="script.js"></script>
-  </body>
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"
-  ></script>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="radioDefault" id="radio2" />
+      <label class="form-check-label" for="radio2">B. <span class="options"></span></label>
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="radioDefault" id="radio3" />
+      <label class="form-check-label" for="radio3">C. <span class="options"></span></label>
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="radioDefault" id="radio4" />
+      <label class="form-check-label" for="radio4">D. <span class="options"></span></label>
+    </div>
+
+    <button class="btn" id="submit">Submit & Next</button>
+
+    <p id="score"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
 </html>
