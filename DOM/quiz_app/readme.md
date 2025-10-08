@@ -58,5 +58,5 @@
 
   <h2>📹 Demo Video</h2>
 
-https://github.com/user-attachments/assets/a90d55ec-c7aa-49d3-b321-5be49fca397a
+https://github.com/user-attachments/assets/2426174b-e5aa-4903-b73a-4b247d7eb33c
 
