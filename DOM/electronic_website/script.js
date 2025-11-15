@@ -1,3 +1,4 @@
+// Product data
 const products = [
   {
     id: 101,
@@ -23,30 +24,7 @@ const products = [
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRY1FWVBhdaa-LjFK-SC5xuTnaLqtuDYU9rug&s",
     qty: 1
   },
-  {
-    id: 104,
-    title: "WD 4TB PS4 Drive",
-    price: 114,
-    description: "High-capacity external drive optimized for PS4 gaming.",
-    image: "https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_.jpg",
-    qty: 1
-  },
-  {
-    id: 105,
-    title: "Acer 21\" HD Monitor",
-    price: 599,
-    description: "Ultra-thin design with 75Hz refresh rate and Radeon FreeSync.",
-    image: "https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg",
-    qty: 1
-  },
-  {
-    id: 106,
-    title: "Samsung 49\" QLED Monitor",
-    price: 999.99,
-    description: "Super ultrawide QLED display with HDR and 1ms response time.",
-    image: "https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg",
-    qty: 1
-  },
+
   {
     id: 107,
     title: "Logitech MX Master 3",
@@ -103,22 +81,7 @@ const products = [
     image: "https://m.media-amazon.com/images/I/51TgRks3kIL._UF1000,1000_QL80_.jpg",
     qty: 1
   },
-  {
-    id: 114,
-    title: "Sony XM5 Headphones",
-    price: 399.99,
-    description: "Industry-leading noise cancelation with 30 hours battery life.",
-    image: "https://www.sony.co.in/image/6145c1d32e6ac8e63a46c912dc33c5bb?fmt=pjpeg&wid=330&bgcolor=FFFFFF&bgc=FFFFFF",
-    qty: 1
-  },
-  {
-    id: 115,
-    title: "Anker 10000mAh PowerBank",
-    price: 25.99,
-    description: "Ultra-compact portable power bank with high-speed charging.",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9BW58pv5WxVbREOLMf8wq7WofVtWsy9Eg0Q&s",
-    qty: 1
-  },
+
   {
     id: 116,
     title: "Roku Stick 4K",
@@ -161,151 +124,250 @@ const products = [
   }
 ];
 
+const product_list = document.querySelector("#product");
+const carts = document.querySelector("#cart");
+const emptyCartMessage = document.querySelector("#empty-cart-message");
+const cartCount = document.querySelector("#cart-count");
+let cart_list = JSON.parse(localStorage.getItem("local")) ?? [];
+const subTotal = document.querySelector("#subTotal");
+const total = document.querySelector("#total");
+const tax = document.querySelector("#tax");
+const checkout = document.querySelector("#Checkout");
 
-const product_list= document.querySelector("#product");
-const carts=document.querySelector("#cart");
-let cart_list= JSON.parse(localStorage.getItem("local")) ?? [];
-const subTotal=document.querySelector("#subTotal");
-const total=document.querySelector("#total");
-const tax=document.querySelector("#tax");
-const checkout=document.querySelector("#Checkout");
-
-function product_function()
-{
-  products.map((product)=>{
-    let productBox=document.createElement('div');
-productBox.className="product-box";
-let img=document.createElement('img');
-img.className="img-fluid";
-img.src=product.image;
-let title=document.createElement('h4');
-title.textContent=product.title;
-title.className="mt-3";
-let price=document.createElement('h3')
-price.textContent="$" +product.price;
-let description=document.createElement('p');
-description.textContent=product.description;
-let button=document.createElement('button');
-button.textContent="Add to cart";
-button.className="btn btn-primary";
-
-button.onclick=()=>{
-  addToCart(product);
+// Initialize the application
+function init() {
+  product_function();
+  cart_function();
+  updateCartCount();
 }
 
-productBox.appendChild(img);
-productBox.appendChild(title);
-productBox.appendChild(price);
-productBox.appendChild(description);
-productBox.appendChild(button);
+// Render products
+// Render products
+function product_function() {
+  products.map((product) => {
+    let productBox = document.createElement('div');
+    productBox.className = "product-box";
 
-product_list.appendChild(productBox);
+    let img = document.createElement('img');
+    img.className = "product-image";
+    img.src = product.image;
+    img.alt = product.title;
 
-});
+    let productContent = document.createElement('div');
+    productContent.className = "product-content";
+
+    let title = document.createElement('h4');
+    title.className = "product-title";
+    title.textContent = product.title;
+
+    let price = document.createElement('div');
+    price.className = "product-price";
+    price.textContent = "$" + product.price;
+
+    let description = document.createElement('p');
+    description.className = "product-description";
+    description.textContent = product.description;
+
+    let button = document.createElement('button');
+    button.className = "btn btn-add-cart";
+    button.innerHTML = '<i class="fas fa-cart-plus me-2"></i>Add to Cart';
+
+    button.onclick = () => {
+      addToCart(product);
+      showAddToCartAnimation(button);
+    };
+
+    productContent.appendChild(title);
+    productContent.appendChild(price);
+    productContent.appendChild(description);
+    productContent.appendChild(button);
+
+    productBox.appendChild(img);
+    productBox.appendChild(productContent);
+
+    product_list.appendChild(productBox);
+  });
 }
-function cart_function()
-{
-  let Total=0;
-  carts.innerHTML="";
-  
-  cart_list.map((cart,index)=>{
-   let mainBox=document.createElement("div");
-    mainBox.className="main-box ";
-    let cartBox=document.createElement("div");
-    cartBox.className="cart-box ";
-    let main=document.createElement("div");
-    main.className="d-md-flex justify-content-around";
-    let img=document.createElement("img");
-    img.className="cart-img "
-    img.src=cart.image;
-    let content=document.createElement("div");
-    content.className="ps-3 d-md-flex flex-column justify-content-start";
-    let title=document.createElement("h6");
-    title.textContent=cart.title;
-    let quantity=document.createElement("h6");
-    quantity.textContent="Qty:"+cart.qty;
-    let price=document.createElement("h4");
-    price.textContent="$"+cart.price;
-    let deleteBtn=document.createElement("button");
-    deleteBtn.className="col-8 btn btn-danger";
-    deleteBtn.textContent="delete";
 
-    deleteBtn.onclick=()=>{
-      removeFromCart(index);
-      localStorage.setItem("local",JSON.stringify(cart_list));
-    }
+// Render cart
+function cart_function() {
+  let Total = 0;
+  carts.innerHTML = "";
 
-    content.appendChild(title);
-    content.appendChild(quantity);
-    content.appendChild(price);
-    content.appendChild(deleteBtn);
+  if (cart_list.length === 0) {
+    emptyCartMessage.style.display = "block";
+  } else {
+    emptyCartMessage.style.display = "none";
 
-    main.appendChild(img);
-    main.appendChild(content);
+    cart_list.map((cart, index) => {
+      let cartItem = document.createElement("div");
+      cartItem.className = "cart-item";
 
-    cartBox.appendChild(main);
-    
-    mainBox.appendChild(cartBox);
-    carts.appendChild(mainBox);
-    Total+=(cart.price*cart.qty);
+      let img = document.createElement("img");
+      img.className = "cart-item-image";
+      img.src = cart.image;
+      img.alt = cart.title;
 
+      let details = document.createElement("div");
+      details.className = "cart-item-details";
 
+      let title = document.createElement("div");
+      title.className = "cart-item-title";
+      title.textContent = cart.title;
 
-  })
+      let price = document.createElement("div");
+      price.className = "cart-item-price";
+      price.textContent = "$" + (cart.price * cart.qty).toFixed(2);
 
+      details.appendChild(title);
+      details.appendChild(price);
 
-      subTotal.textContent="$"+Total.toFixed(2);
-      taxValue=Total*(18/100)
-      tax.textContent="$"+taxValue.toFixed(2);
-      total.textContent="$"+(Total+taxValue).toFixed(2);
+      let actions = document.createElement("div");
+      actions.className = "cart-item-actions";
+
+      let decreaseBtn = document.createElement("span");
+      decreaseBtn.className = "qty-btn";
+      decreaseBtn.innerHTML = '<i class="fas fa-minus"></i>';
+      decreaseBtn.onclick = () => {
+        decreaseQuantity(index);
+      };
+
+      let qtyValue = document.createElement("span");
+      qtyValue.className = "qty-value";
+      qtyValue.textContent = cart.qty;
+
+      let increaseBtn = document.createElement("span");
+      increaseBtn.className = "qty-btn";
+      increaseBtn.innerHTML = '<i class="fas fa-plus"></i>';
+      increaseBtn.onclick = () => {
+        increaseQuantity(index);
+      };
+
+      let removeBtn = document.createElement("button");
+      removeBtn.className = "btn-remove";
+      removeBtn.innerHTML = '<i class="fas fa-trash"></i>';
+      removeBtn.onclick = () => {
+        removeFromCart(index);
+      };
+
+      actions.appendChild(decreaseBtn);
+      actions.appendChild(qtyValue);
+      actions.appendChild(increaseBtn);
+      actions.appendChild(removeBtn);
+
+      cartItem.appendChild(img);
+      cartItem.appendChild(details);
+      cartItem.appendChild(actions);
+
+      carts.appendChild(cartItem);
+
+      Total += (cart.price * cart.qty);
+    });
+  }
+
+  subTotal.textContent = "$" + Total.toFixed(2);
+  let taxValue = Total * (18 / 100);
+  tax.textContent = "$" + taxValue.toFixed(2);
+  total.textContent = "$" + (Total + taxValue).toFixed(2);
+
+  updateCartCount();
+  localStorage.setItem("local", JSON.stringify(cart_list));
 }
-function addToCart(product)
-{
-  isExist=false
-  cart_list.map((cart)=>{
-    if(cart.id==product.id)
-    {
+
+// Add to cart function
+function addToCart(product) {
+  let isExist = false;
+  cart_list.map((cart) => {
+    if (cart.id == product.id) {
       cart.qty++;
-      isExist=true;
+      isExist = true;
     }
-  })
-  if(isExist==false)
-  {
-  cart_list.push(product)
+  });
+
+  if (!isExist) {
+    cart_list.push({ ...product });
+  }
+
+  cart_function();
+}
+
+// Remove from cart function
+function removeFromCart(index) {
+  cart_list.splice(index, 1);
+  cart_function();
+}
+
+// Decrease quantity
+function decreaseQuantity(index) {
+  if (cart_list[index].qty > 1) {
+    cart_list[index].qty--;
+  } else {
+    cart_list.splice(index, 1);
   }
   cart_function();
-        localStorage.setItem("local",JSON.stringify(cart_list));
-  
 }
-function removeFromCart(index)
-{
- 
-    if(cart_list[index].qty==1)
-    {
-      cart_list.splice(index,1);
-    }
-    else
-    {
-      cart_list[index].qty--;
-    }
+
+// Increase quantity
+function increaseQuantity(index) {
+  cart_list[index].qty++;
   cart_function();
-      localStorage.setItem("local",JSON.stringify(cart_list));
 }
-product_function();
-cart_function();
-checkout.addEventListener("click",()=>{
-  if(cart_list.length==0)
-  {
-    alert("Cart list is empty");
-  }
-  else
-  {
-    alert("Checkout successfully ! thank you for purchase");
-    cart_list=[];
+
+// Update cart count in navbar
+function updateCartCount() {
+  let count = 0;
+  cart_list.forEach(item => {
+    count += item.qty;
+  });
+  cartCount.textContent = count;
+}
+
+// Add to cart animation
+function showAddToCartAnimation(button) {
+  button.innerHTML = '<i class="fas fa-check me-2"></i>Added!';
+  button.classList.add('btn-success');
+
+  setTimeout(() => {
+    button.innerHTML = '<i class="fas fa-cart-plus me-2"></i>Add to Cart';
+    button.classList.remove('btn-success');
+  }, 1500);
+}
+
+// Checkout function
+checkout.addEventListener("click", () => {
+  if (cart_list.length == 0) {
+    showNotification("Your cart is empty. Add some products first!", "warning");
+  } else {
+    showNotification("Checkout successful! Thank you for your purchase.", "success");
+    cart_list = [];
     localStorage.removeItem("local");
     cart_function();
   }
 });
 
+// Show notification
+function showNotification(message, type) {
+  // Create notification element
+  const notification = document.createElement('div');
+  notification.className = `alert alert-${type} alert-dismissible fade show position-fixed`;
+  notification.style.top = '20px';
+  notification.style.right = '20px';
+  notification.style.zIndex = '9999';
+  notification.style.minWidth = '300px';
+  notification.innerHTML = `
+                ${message}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            `;
 
- 
+  document.body.appendChild(notification);
+
+  // Auto remove after 3 seconds
+  setTimeout(() => {
+    if (notification.parentNode) {
+      notification.parentNode.removeChild(notification);
+    }
+  }, 3000);
+}
+
+// Initialize the app
+init();
