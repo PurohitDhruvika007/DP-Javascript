@@ -75,5 +75,5 @@ This project was created as part of a learning exercise in front-end web develop
 
 ## 🎥 video
 
-https://github.com/user-attachments/assets/91675b9a-6094-4ffd-9ce8-a7fcd60d620f
+https://github.com/user-attachments/assets/3c874050-a32c-4803-9846-a6f21f977536
 
